@@ -11,7 +11,7 @@ public class CProxyCommon
     public void addNames () //This code may disappear later
     {
         String langDir = "/assets/chaoticbastion/lang/";
-        String[] langFiles = { "en_US.lang" };
+        String[] langFiles = { "en_US.lang", "en_PT.lang", "de_DE.lang" };
 
         for (String langFile : langFiles)
         {
