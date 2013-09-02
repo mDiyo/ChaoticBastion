@@ -3,8 +3,8 @@
   "modid": "ChaoticBastion",
   "name": "Chaotic Bastion",
   "description": "Rain fire and thunder upon the world as we build our way to victory!",
-  "version": "Test",
-  "mcversion": "1.6.2",
+  "version": "@VERSION@",
+  "mcversion": "@MCVERSION@,
   "url": "insert.url.here",
   "updateUrl": "",
   "authors": [

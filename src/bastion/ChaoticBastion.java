@@ -1,12 +1,11 @@
 package bastion;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import bastion.util.CEventHandler;
 import bastion.util.CProxyCommon;
+import bastion.util.OverworldAlterProvider;
 import bastion.util.PHBastion;
-import bastion.util.TabBastion;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -45,6 +44,8 @@ public class ChaoticBastion
         proxy.addNames();
         proxy.registerRendering();
         MinecraftForge.EVENT_BUS.register(new CEventHandler());
+        DimensionManager.unregisterProviderType(0);
+        DimensionManager.registerProviderType(0, OverworldAlterProvider.class, true);
     }
 
     /* Cross-mod support */
