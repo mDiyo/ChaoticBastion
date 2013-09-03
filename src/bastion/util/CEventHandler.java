@@ -7,7 +7,6 @@ import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import net.minecraftforge.event.world.ChunkDataEvent;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
-import tconstruct.library.util.ValueCoordTuple;
 import bastion.world.CrystalValues;
 import bastion.world.WorldTracker;
 

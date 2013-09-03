@@ -1,10 +1,15 @@
 package bastion.world;
 
 import java.util.HashMap;
+import java.util.Random;
 
-import tconstruct.library.util.ValueCoordTuple;
+import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunkProvider;
 
-public class WorldTracker
+import bastion.util.ValueCoordTuple;
+import cpw.mods.fml.common.IWorldGenerator;
+
+public class WorldTracker implements IWorldGenerator
 {
     public enum CrystalType
     {
@@ -32,5 +37,18 @@ public class WorldTracker
             crystal = new CrystalValues("Charge");
         crystal.addValue(value, type);
         charge.put(coord, crystal);
+    }
+
+    @Override
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
+    {
+        initializeChunkData(chunkX, chunkZ, world.provider.dimensionId);
+    }
+    
+    void initializeChunkData (int chunkX, int chunkZ, int worldID)
+    {
+        ValueCoordTuple coord = new ValueCoordTuple(worldID, chunkX, chunkZ);
+        WorldTracker.theftValue.put(coord, new CrystalValues("Theft"));
+        WorldTracker.charge.put(coord, new CrystalValues("Charge"));
     }
 }

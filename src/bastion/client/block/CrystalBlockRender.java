@@ -1,9 +1,9 @@
 package bastion.client.block;
 
-import tconstruct.client.TProxyClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.world.IBlockAccess;
+import bastion.util.CProxyClient;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
@@ -17,15 +17,15 @@ public class CrystalBlockRender implements ISimpleBlockRenderingHandler
         if (modelID == model)
         {
             renderer.setRenderBounds(0.375F, 0.0F, 0.375F, 0.625F, 0.125F, 0.625F);
-            TProxyClient.renderStandardInvBlock(renderer, block, metadata);
+            CProxyClient.renderStandardInvBlock(renderer, block, metadata);
             renderer.setRenderBounds(0.3125F, 0.125F, 0.3125F, 0.6875F, 0.25F, 0.6875F);
-            TProxyClient.renderStandardInvBlock(renderer, block, metadata);
+            CProxyClient.renderStandardInvBlock(renderer, block, metadata);
             renderer.setRenderBounds(0.25F, 0.25F, 0.25F, 0.75F, 0.75F, 0.75F);
-            TProxyClient.renderStandardInvBlock(renderer, block, metadata);
+            CProxyClient.renderStandardInvBlock(renderer, block, metadata);
             renderer.setRenderBounds(0.3125F, 0.75F, 0.3125F, 0.6875F, 0.875F, 0.6875F);
-            TProxyClient.renderStandardInvBlock(renderer, block, metadata);
+            CProxyClient.renderStandardInvBlock(renderer, block, metadata);
             renderer.setRenderBounds(0.375F, 0.875F, 0.375F, 0.625F, 1.0F, 0.625F);
-            TProxyClient.renderStandardInvBlock(renderer, block, metadata);
+            CProxyClient.renderStandardInvBlock(renderer, block, metadata);
         }
     }
 

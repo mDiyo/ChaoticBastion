@@ -6,12 +6,11 @@ import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.world.EnumSkyBlock;
-import tconstruct.library.util.IActiveLogic;
 import bastion.CContent;
 import bastion.world.WorldTracker;
 import bastion.world.WorldTracker.CrystalType;
 
-public class LightAggregator extends InventoryLogicBase implements IActiveLogic
+public class LightAggregator extends InventoryLogicBase
 {
     short currentTime;
     short maxTime = 20 * 60 * 5;
@@ -311,13 +310,11 @@ public class LightAggregator extends InventoryLogicBase implements IActiveLogic
         return block == CContent.crystalBlock;
     }
 
-    @Override
     public boolean getActive ()
     {
         return active;
     }
 
-    @Override
     public void setActive (boolean flag)
     {
         if (active != flag)

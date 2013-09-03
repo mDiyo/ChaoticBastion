@@ -6,6 +6,7 @@ import bastion.util.CEventHandler;
 import bastion.util.CProxyCommon;
 import bastion.util.OverworldAlterProvider;
 import bastion.util.PHBastion;
+import bastion.world.WorldTracker;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -14,6 +15,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "ChaoticBastion", name = "Chaotic Bastion", version = "@VERSION@")
 @NetworkMod(serverSideRequired = false, clientSideRequired = true)
@@ -44,6 +46,7 @@ public class ChaoticBastion
         proxy.addNames();
         proxy.registerRendering();
         MinecraftForge.EVENT_BUS.register(new CEventHandler());
+        GameRegistry.registerWorldGenerator(new WorldTracker());
         DimensionManager.unregisterProviderType(0);
         DimensionManager.registerProviderType(0, OverworldAlterProvider.class, true);
     }
