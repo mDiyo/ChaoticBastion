@@ -1,3 +1,6 @@
 itemGroup.ChaoticBastion=Chaotic Bastion
 
 tile.bastion.woodwall.name=Hölzerne Barriere
+tile.bastion.aggregator.name=Lichtaggregator
+tile.bastion.crystal.block.name=Lichtkristall
+tile.bastion.banner.name=Dorfy-Banner
