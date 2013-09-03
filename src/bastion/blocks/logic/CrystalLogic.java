@@ -5,7 +5,6 @@ import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.tileentity.TileEntity;
-import tconstruct.library.util.IActiveLogic;
 
 public class CrystalLogic extends TileEntity
 {
