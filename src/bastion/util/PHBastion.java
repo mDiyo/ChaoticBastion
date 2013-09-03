@@ -36,8 +36,19 @@ public class PHBastion
         /* Define the mod's IDs. 
          * Avoid values below 4096 for items and in the 250-450 range for blocks
          */
+        aggregator = config.getBlock("Aggregator", 2850).getInt(2850);
+        crystalBlock = config.getBlock("Crystal Spire", 2851).getInt(2851);
+        antilight = config.getBlock("Antilight", 2852).getInt(2852);
+        
         woodWall = config.getBlock("Wooden Wall", 2870).getInt(2870);
+        banner = config.getBlock("Banner", 2871).getInt(2871);
     }
     
     public static int woodWall;
+    public static int banner;
+    
+    public static int aggregator;
+    public static int crystalBlock;
+    public static int antilight;
+
 }
