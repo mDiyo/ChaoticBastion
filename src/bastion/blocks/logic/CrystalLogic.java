@@ -7,7 +7,7 @@ import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.tileentity.TileEntity;
 import tconstruct.library.util.IActiveLogic;
 
-public class CrystalLogic extends TileEntity implements IActiveLogic
+public class CrystalLogic extends TileEntity
 {
     boolean active;
     boolean growing;
@@ -23,13 +23,11 @@ public class CrystalLogic extends TileEntity implements IActiveLogic
         this.crystalValue = value;
     }
 
-    @Override
     public boolean getActive ()
     {
         return active;
     }
 
-    @Override
     public void setActive (boolean flag)
     {
         System.out.println("Activating");
