@@ -61,7 +61,7 @@ public class CrystalBlock extends BlockContainer
     @Override
     public void getSubBlocks (int id, CreativeTabs tab, List list)
     {
-        for (int iter = 0; iter < 16; iter++)
+        for (int iter = 0; iter < 1; iter++)
         {
             list.add(new ItemStack(id, 1, iter));
         }
@@ -74,7 +74,7 @@ public class CrystalBlock extends BlockContainer
 
         for (int i = 0; i < this.icons.length; ++i)
         {
-            this.icons[i] = iconRegister.registerIcon("tinker:machines/" + textureNames[i]);
+            this.icons[i] = iconRegister.registerIcon("chaoticbastion:" + textureNames[i]);
         }
     }
 

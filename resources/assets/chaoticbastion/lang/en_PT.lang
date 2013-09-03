@@ -1,3 +1,6 @@
 itemGroup.ChaoticBastion=Chaotic Bastion
 
 tile.bastion.woodwall.name=Mast Planks
+tile.bastion.aggregator.name=Light Aggregator
+tile.bastion.crystal.block.name=Light Crystal
+tile.bastion.banner.name=Landlubber Banner
