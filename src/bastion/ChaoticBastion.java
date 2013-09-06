@@ -35,6 +35,7 @@ public class ChaoticBastion
         PHBastion.initProps(event.getModConfigurationDirectory());
         CContent.createBlocks();
         CContent.createItems();
+        CContent.createEntities();
         CContent.createRecipes();
         CContent.createOtherContent();
     }

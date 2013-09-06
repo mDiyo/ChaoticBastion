@@ -39,7 +39,7 @@ public class WallBlock extends Block
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side)
     {
-        if (world.getBlockId(x, y, z) == this.blockID)
+        if ((side == 0 || side == 1) && world.getBlockId(x, y, z) == this.blockID)
             return false;
         return super.shouldSideBeRendered(world, x, y, z, side);
     }
