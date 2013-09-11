@@ -81,7 +81,7 @@ public class CrystalLogic extends TileEntity
     @Override
     public void onDataPacket (INetworkManager net, Packet132TileEntityData packet)
     {
-        readCustomNBT(packet.customParam1);
+        readCustomNBT(packet.data);
         worldObj.markBlockForRenderUpdate(xCoord, yCoord, zCoord);
     }
 }

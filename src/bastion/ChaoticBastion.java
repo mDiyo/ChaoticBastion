@@ -44,7 +44,6 @@ public class ChaoticBastion
     @EventHandler
     public void init (FMLInitializationEvent event)
     {
-        proxy.addNames();
         proxy.registerRendering();
         MinecraftForge.EVENT_BUS.register(new CEventHandler());
         GameRegistry.registerWorldGenerator(new WorldTracker());

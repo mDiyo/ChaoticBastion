@@ -38,7 +38,7 @@ public class WoodMinecartRender extends Render
     public void renderTheMinecart(WoodMinecartEntity par1WoodMinecartEntity, double par2, double par4, double par6, float par8, float par9)
     {
         GL11.glPushMatrix();
-        this.func_110777_b(par1WoodMinecartEntity);
+        this.bindEntityTexture(par1WoodMinecartEntity);
         long i = (long)par1WoodMinecartEntity.entityId * 493286711L;
         i = i * i * 4392167121L + i * 98761L;
         float f2 = (((float)(i >> 16 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
@@ -103,14 +103,14 @@ public class WoodMinecartRender extends Render
         if (block != null)
         {
             GL11.glPushMatrix();
-            this.func_110776_a(TextureMap.field_110575_b);
+            this.bindTexture(TextureMap.locationBlocksTexture);
             float f8 = 0.75F;
             GL11.glScalef(f8, f8, f8);
             GL11.glTranslatef(0.0F, (float)j / 16.0F, 0.0F);
             this.renderBlockInMinecart(par1WoodMinecartEntity, par9, block, k);
             GL11.glPopMatrix();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            this.func_110777_b(par1WoodMinecartEntity);
+            this.bindEntityTexture(par1WoodMinecartEntity);
         }
 
         GL11.glScalef(-1.0F, -1.0F, 1.0F);
@@ -134,7 +134,7 @@ public class WoodMinecartRender extends Render
         GL11.glPopMatrix();
     }
 
-    protected ResourceLocation func_110775_a(Entity par1Entity)
+    protected ResourceLocation getEntityTexture(Entity par1Entity)
     {
         return this.func_110803_a((WoodMinecartEntity)par1Entity);
     }

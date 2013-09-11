@@ -62,7 +62,7 @@ public class BannerSpecialRender extends TileEntitySpecialRenderer
             this.modelSign.signStick.showModel = false;
         }*/
 
-        this.func_110628_a(field_110638_a);
+        this.bindTexture(field_110638_a);
         GL11.glPushMatrix();
         GL11.glScalef(f1, -f1, -f1);
         this.modelSign.renderBanner(0.0625f);

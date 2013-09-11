@@ -5,11 +5,11 @@ import net.minecraft.item.ItemStack;
 
 public class TabBastion extends CreativeTabs
 {
-    static ItemStack display;
+    ItemStack display;
 
-    public TabBastion()
+    public TabBastion(String name)
     {
-        super("ChaoticBastion");
+        super(name);
     }
 
     public TabBastion init (ItemStack stack)
