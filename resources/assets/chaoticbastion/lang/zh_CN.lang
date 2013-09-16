@@ -31,7 +31,7 @@ tile.stone.raw.blue.name=大洋石头
 tile.stone.raw.brown.name=罗马石头
 tile.stone.raw.green.name=翡翠石头
 tile.stone.raw.red.name=夕照石头
-tile.stone.raw.black.name=夕照石头
+tile.stone.raw.black.name=煤黑石头
 
 tile.stone.cobble.white.name=光明圆石
 tile.stone.cobble.orange.name=古铜圆石
@@ -48,7 +48,7 @@ tile.stone.cobble.blue.name=大洋圆石
 tile.stone.cobble.brown.name=罗马圆石
 tile.stone.cobble.green.name=翡翠圆石
 tile.stone.cobble.red.name=夕照圆石
-tile.stone.cobble.black.name=夕照圆石
+tile.stone.cobble.black.name=煤黑圆石
 
 tile.stone.mosscobble.white.name=光明苔石
 tile.stone.mosscobble.orange.name=古铜苔石
@@ -65,7 +65,7 @@ tile.stone.mosscobble.blue.name=大洋苔石
 tile.stone.mosscobble.brown.name=罗马苔石
 tile.stone.mosscobble.green.name=翡翠苔石
 tile.stone.mosscobble.red.name=夕照苔石
-tile.stone.mosscobble.black.name=夕照苔石
+tile.stone.mosscobble.black.name=煤黑苔石
 
 tile.stone.brick.white.name=光明砖块
 tile.stone.brick.orange.name=古铜砖块
@@ -82,7 +82,7 @@ tile.stone.brick.blue.name=大洋砖块
 tile.stone.brick.brown.name=罗马砖块
 tile.stone.brick.green.name=翡翠砖块
 tile.stone.brick.red.name=夕照砖块
-tile.stone.brick.black.name=夕照砖块
+tile.stone.brick.black.name=煤黑砖块
 
 tile.stone.mossbrick.white.name=苔藓光明砖块
 tile.stone.mossbrick.orange.name=苔藓古铜砖块
@@ -99,7 +99,7 @@ tile.stone.mossbrick.blue.name=苔藓大洋砖块
 tile.stone.mossbrick.brown.name=苔藓罗马砖块
 tile.stone.mossbrick.green.name=苔藓翡翠砖块
 tile.stone.mossbrick.red.name=苔藓夕照砖块
-tile.stone.mossbrick.black.name=苔藓夕照砖块
+tile.stone.mossbrick.black.name=苔藓煤黑砖块
 
 tile.crackedbrick.raw.white.name=裂纹光明砖块
 tile.crackedbrick.raw.orange.name=裂纹古铜砖块
@@ -116,7 +116,7 @@ tile.crackedbrick.raw.blue.name=裂纹大洋砖块
 tile.crackedbrick.raw.brown.name=裂纹罗马砖块
 tile.crackedbrick.raw.green.name=裂纹翡翠砖块
 tile.crackedbrick.raw.red.name=裂纹夕照砖块
-tile.crackedbrick.raw.black.name=裂纹夕照砖块
+tile.crackedbrick.raw.black.name=裂纹煤黑砖块
 
 tile.road.raw.white.name=光明铺路石
 tile.road.raw.orange.name=古铜铺路石
@@ -133,7 +133,7 @@ tile.road.raw.blue.name=大洋铺路石
 tile.road.raw.brown.name=罗马铺路石
 tile.road.raw.green.name=翡翠铺路石
 tile.road.raw.red.name=夕照铺路石
-tile.road.raw.black.name=夕照铺路石
+tile.road.raw.black.name=煤黑铺路石
 
 tile.stone.fancy.white.name=平滑光明砖块
 tile.stone.fancy.orange.name=平滑古铜砖块
@@ -150,7 +150,7 @@ tile.stone.fancy.blue.name=平滑大洋砖块
 tile.stone.fancy.brown.name=平滑罗马砖块
 tile.stone.fancy.green.name=平滑翡翠砖块
 tile.stone.fancy.red.name=平滑夕照砖块
-tile.stone.fancy.black.name=平滑夕照砖块
+tile.stone.fancy.black.name=平滑煤黑砖块
 
 tile.stone.chiseled.white.name=雕琢光明砖块
 tile.stone.chiseled.orange.name=雕琢古铜砖块
@@ -167,4 +167,4 @@ tile.stone.chiseled.blue.name=雕琢大洋砖块
 tile.stone.chiseled.brown.name=雕琢罗马砖块
 tile.stone.chiseled.green.name=雕琢翡翠砖块
 tile.stone.chiseled.red.name=雕琢夕照砖块
-tile.stone.chiseled.black.name=雕琢夕照砖块
+tile.stone.chiseled.black.name=雕琢煤黑砖块
