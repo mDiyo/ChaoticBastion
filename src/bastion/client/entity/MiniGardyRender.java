@@ -17,6 +17,8 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 import org.lwjgl.opengl.GL11;
 
+import bastion.client.model.ModelMiniGardy;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -182,5 +184,5 @@ public class MiniGardyRender extends RenderLiving
         return texture;
     }
 
-    static final ResourceLocation texture = new ResourceLocation("assets/tinker/textures/mob/googirl.png");
+    static final ResourceLocation texture = new ResourceLocation("chaoticbastion", "textures/entity/googirl.png");
 }

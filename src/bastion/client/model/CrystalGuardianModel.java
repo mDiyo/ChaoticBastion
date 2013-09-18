@@ -1,4 +1,4 @@
-package bastion.client.entity;
+package bastion.client.model;
 
 import bastion.entity.friendly.Automaton;
 import net.minecraft.client.model.ModelBase;

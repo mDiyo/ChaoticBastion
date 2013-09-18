@@ -1,4 +1,4 @@
-package bastion.client.entity;
+package bastion.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -6,24 +6,24 @@ import net.minecraft.util.MathHelper;
 
 public class ModelMiniGardy extends ModelBase
 {
-    ModelRendererDegrees body;
-    ModelRendererDegrees torso;
-    ModelRendererDegrees head;
-    ModelRendererDegrees rightArm;
-    ModelRendererDegrees rightHand;
-    ModelRendererDegrees leftArm;
-    ModelRendererDegrees leftHand;
-    ModelRendererDegrees hairTop;
-    ModelRendererDegrees hairRight;
-    ModelRendererDegrees lockLeft;
-    ModelRendererDegrees lockRight;
-    ModelRendererDegrees hairLeft;
-    ModelRendererDegrees hairBack;
-    ModelRendererDegrees hairFront;
-    ModelRendererDegrees hairTopFront;
-    ModelRendererDegrees hairTopBack;
-    ModelRendererDegrees lockInsideRight;
-    ModelRendererDegrees lockInsideLeft;
+    public ModelRendererDegrees body;
+    public ModelRendererDegrees torso;
+    public ModelRendererDegrees head;
+    public ModelRendererDegrees rightArm;
+    public ModelRendererDegrees rightHand;
+    public ModelRendererDegrees leftArm;
+    public ModelRendererDegrees leftHand;
+    public ModelRendererDegrees hairTop;
+    public ModelRendererDegrees hairRight;
+    public ModelRendererDegrees lockLeft;
+    public ModelRendererDegrees lockRight;
+    public ModelRendererDegrees hairLeft;
+    public ModelRendererDegrees hairBack;
+    public ModelRendererDegrees hairFront;
+    public ModelRendererDegrees hairTopFront;
+    public ModelRendererDegrees hairTopBack;
+    public ModelRendererDegrees lockInsideRight;
+    public ModelRendererDegrees lockInsideLeft;
 
     public ModelMiniGardy()
     {

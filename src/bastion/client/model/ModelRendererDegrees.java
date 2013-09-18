@@ -1,4 +1,4 @@
-package bastion.client.entity;
+package bastion.client.model;
 
 import java.util.ArrayList;
 import java.util.List;

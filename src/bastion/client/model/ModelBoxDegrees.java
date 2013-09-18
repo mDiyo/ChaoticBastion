@@ -1,4 +1,4 @@
-package bastion.client.entity;
+package bastion.client.model;
 
 import net.minecraft.client.model.PositionTextureVertex;
 import net.minecraft.client.model.TexturedQuad;

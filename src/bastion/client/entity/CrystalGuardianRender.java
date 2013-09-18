@@ -17,6 +17,8 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 import org.lwjgl.opengl.GL11;
 
+import bastion.client.model.CrystalGuardianModel;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -191,5 +193,5 @@ public class CrystalGuardianRender extends RenderLiving
         return texture;
     }
 
-    static final ResourceLocation texture = new ResourceLocation("assets/tinker/textures/mob/crystalguardamber.png");
+    static final ResourceLocation texture = new ResourceLocation("chaoticbastion", "textures/entity/crystalguardamber.png");
 }
