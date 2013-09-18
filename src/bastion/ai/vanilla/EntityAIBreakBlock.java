@@ -7,7 +7,6 @@ import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathPoint;
 import net.minecraft.util.MathHelper;
-import tconstruct.library.util.CoordTuple;
 
 public class EntityAIBreakBlock extends EntityAIBase
 {

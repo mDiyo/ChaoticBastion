@@ -2,7 +2,9 @@ package bastion;
 
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
+import bastion.skill.PlayerSkillTracker;
 import bastion.util.CEventHandler;
+import bastion.util.CPacketHandler;
 import bastion.util.CProxyCommon;
 import bastion.util.OverworldAlterProvider;
 import bastion.util.PHBastion;
@@ -18,7 +20,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "ChaoticBastion", name = "Chaotic Bastion", version = "@VERSION@")
-@NetworkMod(serverSideRequired = false, clientSideRequired = true)
+@NetworkMod(serverSideRequired = false, clientSideRequired = true, channels = { "ChaoticBastion" }, packetHandler = CPacketHandler.class)
 public class ChaoticBastion
 {
     /* Instance of this mod, used for grabbing prototype fields */
@@ -27,6 +29,8 @@ public class ChaoticBastion
     /* Proxies for sides, used for graphics processing */
     @SidedProxy(clientSide = "bastion.util.CProxyClient", serverSide = "bastion.util.CProxyCommon")
     public static CProxyCommon proxy;
+    /* Fires events */
+    public static PlayerSkillTracker skillTracker;
 
     /* Define blocks, items, crucial info */
     @EventHandler
@@ -46,6 +50,7 @@ public class ChaoticBastion
     {
         proxy.registerRendering();
         MinecraftForge.EVENT_BUS.register(new CEventHandler());
+        GameRegistry.registerPlayerTracker(skillTracker = new PlayerSkillTracker());
         GameRegistry.registerWorldGenerator(new WorldTracker());
         DimensionManager.unregisterProviderType(0);
         DimensionManager.registerProviderType(0, OverworldAlterProvider.class, true);
