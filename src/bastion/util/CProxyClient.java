@@ -11,9 +11,6 @@ import net.minecraftforge.event.ForgeSubscribe;
 
 import org.lwjgl.opengl.GL11;
 
-import tconstruct.client.entity.CloneHeadModel;
-
-
 import bastion.ChaoticBastion;
 import bastion.blocks.logic.BannerLogic;
 import bastion.client.block.BannerSpecialRender;
@@ -22,6 +19,7 @@ import bastion.client.entity.CrystalGuardianRender;
 import bastion.client.entity.MiniGardyRender;
 import bastion.client.entity.SlimeCloneRender;
 import bastion.client.entity.WoodMinecartRender;
+import bastion.client.model.CloneHeadModel;
 import bastion.entity.WoodMinecartEntity;
 import bastion.entity.friendly.Automaton;
 import bastion.entity.friendly.GardeSlime;

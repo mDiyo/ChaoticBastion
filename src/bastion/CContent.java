@@ -1,6 +1,5 @@
 package bastion;
 
-import tconstruct.TConstruct;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -12,7 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import bastion.blocks.*;
 import bastion.blocks.logic.*;
 import bastion.entity.*;
-import bastion.entity.friendly.GardeSlime;
+import bastion.entity.friendly.*;
 import bastion.items.*;
 import bastion.items.block.*;
 import bastion.util.*;

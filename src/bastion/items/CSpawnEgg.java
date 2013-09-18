@@ -2,9 +2,6 @@ package bastion.items;
 
 import java.util.List;
 
-import mods.natura.entity.BabyHeatscarSpider;
-import mods.natura.entity.HeatscarSpider;
-import mods.natura.entity.NitroCreeper;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
