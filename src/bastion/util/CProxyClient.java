@@ -11,12 +11,21 @@ import net.minecraftforge.event.ForgeSubscribe;
 
 import org.lwjgl.opengl.GL11;
 
+import tconstruct.client.entity.CloneHeadModel;
+
+
 import bastion.ChaoticBastion;
 import bastion.blocks.logic.BannerLogic;
 import bastion.client.block.BannerSpecialRender;
 import bastion.client.block.CrystalBlockRender;
+import bastion.client.entity.CrystalGuardianRender;
+import bastion.client.entity.MiniGardyRender;
+import bastion.client.entity.SlimeCloneRender;
 import bastion.client.entity.WoodMinecartRender;
 import bastion.entity.WoodMinecartEntity;
+import bastion.entity.friendly.Automaton;
+import bastion.entity.friendly.GardeSlime;
+import bastion.entity.friendly.SlimeClone;
 import bastion.skill.Skill;
 import bastion.skill.SkillSet;
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -42,6 +51,9 @@ public class CProxyClient extends CProxyCommon
     {
         WoodMinecartRender minecart = new WoodMinecartRender();
         RenderingRegistry.registerEntityRenderingHandler(WoodMinecartEntity.class, minecart);
+        RenderingRegistry.registerEntityRenderingHandler(GardeSlime.class, new MiniGardyRender());
+        RenderingRegistry.registerEntityRenderingHandler(Automaton.class, new CrystalGuardianRender());
+        RenderingRegistry.registerEntityRenderingHandler(SlimeClone.class, new SlimeCloneRender(new CloneHeadModel(0), new CloneHeadModel(1f), 0.25F));
     }
 
     public static void renderStandardInvBlock(RenderBlocks renderblocks, Block block, int meta)

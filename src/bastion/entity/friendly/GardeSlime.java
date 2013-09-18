@@ -7,10 +7,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import tconstruct.TConstruct;
-import tconstruct.common.TProxyCommon;
-import bastion.entity.ai.*;
+import bastion.ChaoticBastion;
+import bastion.entity.ai.AIFollowLeader;
+import bastion.entity.ai.AISwim;
+import bastion.entity.ai.GardeslimeTaskHandler;
+import bastion.entity.ai.ITaskHandler;
 import bastion.entity.ai.ITaskHandler.TaskSet;
+import bastion.util.CNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -53,7 +56,7 @@ public class GardeSlime extends GolemBase
         if (player.isSneaking())
         {
             if (!worldObj.isRemote)
-                player.openGui(TConstruct.instance, TProxyCommon.miniGardyGui, this.worldObj, this.entityId, 0, 0);
+                player.openGui(ChaoticBastion.instance, CNetworkHandler.miniGardyGui, this.worldObj, this.entityId, 0, 0);
             return true;
             //return false;
         }

@@ -4,6 +4,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import bastion.skill.PlayerSkillTracker;
 import bastion.util.CEventHandler;
+import bastion.util.CNetworkHandler;
 import bastion.util.CPacketHandler;
 import bastion.util.CProxyCommon;
 import bastion.util.OverworldAlterProvider;
@@ -17,6 +18,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "ChaoticBastion", name = "Chaotic Bastion", version = "@VERSION@")
@@ -49,6 +51,7 @@ public class ChaoticBastion
     public void init (FMLInitializationEvent event)
     {
         proxy.registerRendering();
+        NetworkRegistry.instance().registerGuiHandler(instance, new CNetworkHandler());
         MinecraftForge.EVENT_BUS.register(new CEventHandler());
         GameRegistry.registerPlayerTracker(skillTracker = new PlayerSkillTracker());
         GameRegistry.registerWorldGenerator(new WorldTracker());

@@ -1,5 +1,6 @@
 package bastion;
 
+import tconstruct.TConstruct;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -11,6 +12,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import bastion.blocks.*;
 import bastion.blocks.logic.*;
 import bastion.entity.*;
+import bastion.entity.friendly.GardeSlime;
+import bastion.items.*;
 import bastion.items.block.*;
 import bastion.util.*;
 
@@ -87,11 +90,13 @@ public class CContent
     public static void createItems()
     {
         woodMinecart = new Item(PHBastion.woodCart).setUnlocalizedName("bastion.woodcart");
+        spawnEgg = new CSpawnEgg(PHBastion.spawnEgg).setUnlocalizedName("bastion.spawnEgg");
     }
 
     public static void createEntities()
     {
         EntityRegistry.registerModEntity(WoodMinecartEntity.class, "WoodMinecart.Empty", 0, ChaoticBastion.instance, 32, 3, true);
+        EntityRegistry.registerModEntity(GardeSlime.class, "GardeSlime", 1, ChaoticBastion.instance, 64, 3, true);
 
     }
 
@@ -147,4 +152,5 @@ public class CContent
     public static Block poisonHerb;
 
     public static Item woodMinecart;
+    public static Item spawnEgg;
 }
