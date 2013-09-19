@@ -68,7 +68,7 @@ public class GolemBase extends EntityCreature implements IInventory
         paused = false;
     }*/
 
-    public EntityLivingBase getOwner ()
+    public EntityLivingBase getLeader ()
     {
         if (leader == null || leader.get() == null)
             return this.worldObj.getPlayerEntityByName(ownerName);
@@ -318,22 +318,26 @@ public class GolemBase extends EntityCreature implements IInventory
     @Override
     public ItemStack getStackInSlot (int slot)
     {
-        if (slot < 0 || slot >= inventory.length)
+        if (slot < 0 || slot >= inventory.length + 5) //equipment
             return null;
+        if (slot >= inventory.length)
+            return getCurrentItemOrArmor(slot - inventory.length);
         return inventory[slot];
     }
 
     public boolean isStackInSlot (int slot)
     {
-        if (slot < 0 || slot >= inventory.length)
+        if (slot < 0 || slot >= inventory.length + 5)
             return false;
+        if (slot >= inventory.length)
+            return getCurrentItemOrArmor(slot - inventory.length) != null;
         return inventory[slot] != null;
     }
 
     @Override
     public int getSizeInventory ()
     {
-        return inventory.length;
+        return inventory.length;// + 5;
     }
 
     @Override
@@ -345,35 +349,63 @@ public class GolemBase extends EntityCreature implements IInventory
     @Override
     public void setInventorySlotContents (int slot, ItemStack itemstack)
     {
-        inventory[slot] = itemstack;
-        if (itemstack != null && itemstack.stackSize > getInventoryStackLimit())
+        if (slot >= inventory.length)
         {
-            itemstack.stackSize = getInventoryStackLimit();
+            setCurrentItemOrArmor(slot - inventory.length, itemstack);
+        }
+        else
+        {
+            inventory[slot] = itemstack;
+            if (itemstack != null && itemstack.stackSize > getInventoryStackLimit())
+            {
+                itemstack.stackSize = getInventoryStackLimit();
+            }
         }
     }
 
     @Override
     public ItemStack decrStackSize (int slot, int quantity)
     {
-        if (inventory[slot] != null)
+        if (slot >= inventory.length)
         {
-            if (inventory[slot].stackSize <= quantity)
+            ItemStack equip = getCurrentItemOrArmor(slot - inventory.length);
+            if (equip != null)
             {
-                ItemStack stack = inventory[slot];
-                inventory[slot] = null;
-                return stack;
+                if (equip.stackSize <= quantity)
+                {
+                    ItemStack stack = equip;
+                    equip = null;
+                    return stack;
+                }
+                ItemStack split = equip.splitStack(quantity);
+                if (equip.stackSize == 0)
+                {
+                    equip = null;
+                    setCurrentItemOrArmor(slot - inventory.length, null);
+                }
+                return split;
             }
-            ItemStack split = inventory[slot].splitStack(quantity);
-            if (inventory[slot].stackSize == 0)
-            {
-                inventory[slot] = null;
-            }
-            return split;
         }
         else
         {
-            return null;
+            if (inventory[slot] != null)
+            {
+                if (inventory[slot].stackSize <= quantity)
+                {
+                    ItemStack stack = inventory[slot];
+                    inventory[slot] = null;
+                    return stack;
+                }
+                ItemStack split = inventory[slot].splitStack(quantity);
+                if (inventory[slot].stackSize == 0)
+                {
+                    inventory[slot] = null;
+                }
+                return split;
+            }
         }
+        
+        return null;
     }
 
     /* Inventory Management */

@@ -19,30 +19,31 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class GardeSlime extends GolemBase
 {
-    protected EntityAIBase[] currentTasks;
+    protected EntityAIBase[] currentTasks = new EntityAIBase[0];
     public GardeSlime(World world)
     {
         super(world);
         this.setSize(0.375F, 0.875F);
-        this.tasks.addTask(1, new AISwim(this));
-        this.tasks.addTask(10, new AIFollowLeader(this));
         initDefaultTasks();
     }
 
     private void initDefaultTasks()
     {
+        this.tasks.addTask(1, new AISwim(this));
+        this.tasks.addTask(10, new AIFollowLeader(this));
+        
         ITaskHandler handler = new GardeslimeTaskHandler();
-        registerTaskHandler(Item.axeWood.itemID, handler);
-        registerTaskHandler(Item.axeStone.itemID, handler);
-        registerTaskHandler(Item.axeIron.itemID, handler);
-        registerTaskHandler(Item.axeDiamond.itemID, handler);
-        registerTaskHandler(Item.axeDiamond.itemID, handler);
+        registerTaskHandler(Item.axeWood, handler);
+        registerTaskHandler(Item.axeStone, handler);
+        registerTaskHandler(Item.axeIron, handler);
+        registerTaskHandler(Item.axeDiamond, handler);
+        registerTaskHandler(Item.axeDiamond, handler);
     }
 
     @Override
     public void setupInventory ()
     {
-        inventory = new ItemStack[14];
+        inventory = new ItemStack[16]; //inventory + quiver
     }
 
     @SideOnly(Side.CLIENT)
@@ -53,6 +54,8 @@ public class GardeSlime extends GolemBase
 
     public boolean interact (EntityPlayer player)
     {
+        if (getLeader() == null)
+            setLeader(player);
         if (player.isSneaking())
         {
             if (!worldObj.isRemote)
@@ -87,23 +90,18 @@ public class GardeSlime extends GolemBase
         }
     }
     
-    static HashMap<Integer, ITaskHandler> taskHandlers = new HashMap<Integer, ITaskHandler>();
+    static HashMap<Item, ITaskHandler> taskHandlers = new HashMap<Item, ITaskHandler>();
     
-    public static void registerTaskHandler(ItemStack item, ITaskHandler handler)
+    public static void registerTaskHandler(Item item, ITaskHandler handler)
     {
         if (item != null)
         {
-            taskHandlers.put(item.itemID, handler);
+            taskHandlers.put(item, handler);
         }
         else
         {
-            System.err.println("Itemstack cannot be null.");
+            System.err.println("Item cannot be null.");
         }
-    }
-    
-    private static void registerTaskHandler(int itemID, ITaskHandler handler)
-    {
-        taskHandlers.put(itemID, handler);        
     }
 
     void updateItemAI(ItemStack stack)
@@ -119,6 +117,11 @@ public class GardeSlime extends GolemBase
             if (handler != null)
             {
                 TaskSet newTasks = handler.getTasks(this, stack);
+                for (int i = 0; i < newTasks.tasks.length; i++)
+                {
+                    this.tasks.addTask(newTasks.priority[i], newTasks.tasks[i]);
+                }
+                currentTasks = newTasks.tasks;
             }
         }
         else

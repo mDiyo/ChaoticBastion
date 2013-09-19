@@ -90,6 +90,7 @@ public class CContent
     {
         woodMinecart = new Item(PHBastion.woodCart).setUnlocalizedName("bastion.woodcart");
         spawnEgg = new CSpawnEgg(PHBastion.spawnEgg).setUnlocalizedName("bastion.spawnEgg");
+        basket = new Basket(PHBastion.basket).setUnlocalizedName("bastion.basket");
     }
 
     public static void createEntities()
@@ -152,4 +153,7 @@ public class CContent
 
     public static Item woodMinecart;
     public static Item spawnEgg;
+    
+    //Villager related
+    public static Item basket;
 }

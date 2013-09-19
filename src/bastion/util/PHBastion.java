@@ -67,6 +67,7 @@ public class PHBastion
         //Items
         woodCart = config.getItem("Wooden Minecart", 23701).getInt(23701);
         spawnEgg = config.getItem("Spawn Egg", 23702).getInt(23702);
+        basket = config.getItem("Basket", 23703).getInt(23703);
     }
     
     //Worldgen
@@ -103,6 +104,7 @@ public class PHBastion
     
     public static int woodCart;
     public static int spawnEgg;
+    public static int basket;
     
 
 }

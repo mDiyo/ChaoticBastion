@@ -8,6 +8,8 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.Event.Result;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import net.minecraftforge.event.world.ChunkDataEvent;
@@ -169,6 +171,18 @@ public class CEventHandler
         return changed;
     }
 
+    @ForgeSubscribe
+    public void pickupItem(EntityItemPickupEvent event)
+    {
+        ItemStack equip = event.entityPlayer.getCurrentEquippedItem();
+        if (equip != null && equip.getItem() instanceof IItemSucker)
+        {
+            ((IItemSucker)equip.getItem()).addWorldItems(event.item, equip);
+            if (event.item.getEntityItem().stackSize <= 0)
+                event.setResult(Result.ALLOW);
+        }
+    }
+    
     /* Vanilla AI */
 
     /*@ForgeSubscribe

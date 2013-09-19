@@ -27,7 +27,7 @@ public class AIFollowLeader extends AIBase
 
     public boolean shouldExecute ()
     {
-        EntityLivingBase owner = this.golem.getOwner();
+        EntityLivingBase owner = this.golem.getLeader();
 
         if (owner == null)
         {

@@ -21,7 +21,7 @@ public class CSpawnEgg extends Item
 {
     int[] primaryColor = { 0x10B028 };
     int[] secondaryColor = { 0xEEEEEE };
-    String[] mobNames = { "Bastion.GardeSlime" };
+    String[] mobNames = { "ChaoticBastion.GardeSlime" };
 
     public CSpawnEgg(int par1)
     {

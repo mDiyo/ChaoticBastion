@@ -14,14 +14,20 @@ public class MiniGardyContainer extends Container
     public MiniGardyContainer(InventoryPlayer inventoryplayer, GardeSlime entity)
     {
         gardy = entity;
-        for (int column = 0; column < 2; column++)
+        for (int column = 0; column < 3; column++)
         {
-            for (int row = 0; row < 7; row++)
+            for (int row = 0; row < 5; row++)
             {
-                this.addSlotToContainer(new Slot(entity, row + column * 7, 44 + row * 18, 36 + column * 18));
+                this.addSlotToContainer(new Slot(entity, row + column * 5, 80 + row * 18, 18 + column * 18));
             }
         }
 
+        this.addSlotToContainer(new Slot(entity, 15, 44, 36));
+        this.addSlotToContainer(new Slot(entity, 16, 8, 36));
+        this.addSlotToContainer(new Slot(entity, 17, 26, 18));
+        this.addSlotToContainer(new Slot(entity, 18, 26, 36));
+        this.addSlotToContainer(new Slot(entity, 19, 26, 54));
+        
         /* Player inventory */
         for (int column = 0; column < 3; column++)
         {

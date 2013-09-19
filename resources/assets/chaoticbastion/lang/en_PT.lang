@@ -2,6 +2,8 @@
 itemGroup.ChaoticBastion=Chaotic Bastion
 itemGroup.ChaoticBastionDecor=Chaotic Bastion Decor
 
+entity.ChaoticBastion.GardeSlime.name=Gardeslime
+
 tile.bastion.woodwall.name=Mast Planks
 tile.bastion.aggregator.name=Light Aggregator
 tile.bastion.crystal.block.name=Light Crystal
@@ -168,3 +170,5 @@ tile.stone.chiseled.green.name=Ship-Chiseled Emerald Bricks
 tile.stone.chiseled.red.name=Ship-Chiseled Sunset Bricks
 tile.stone.chiseled.black.name=Ship-Chiseled Sooty Bricks
 
+item.bastion.spawnEgg.name=Spawn
+item.bastion.basket.name=Booty Basket
