@@ -1,8 +1,8 @@
-package bastion.entity.ai;
+package bastion.ai.action;
 
 import bastion.entity.friendly.GolemBase;
 
-public class AISwim extends AIBase
+public class AISwim extends ActionBase
 {
     public AISwim(GolemBase golem)
     {

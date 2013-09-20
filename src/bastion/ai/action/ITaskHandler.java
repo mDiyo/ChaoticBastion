@@ -1,19 +1,21 @@
-package bastion.entity.ai;
+package bastion.ai.action;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.item.ItemStack;
+import bastion.ai.task.TaskBase;
 
 public interface ITaskHandler
 {
-    public TaskSet getTasks(Entity entity, ItemStack stack);
+    public ActionSet getActions(Entity entity, ItemStack stack);
+    public TaskBase getToolTask(Entity entity, ItemStack stack);
     
-    public class TaskSet
+    public class ActionSet
     {
         public final EntityAIBase[] tasks;
         public final Integer[] priority;
         
-        public TaskSet(Integer[] priority, EntityAIBase[] tasks)
+        public ActionSet(Integer[] priority, EntityAIBase[] tasks)
         {
             assert tasks.length == priority.length : "You need to pass two arrays of identical length";
             this.tasks = tasks;
@@ -21,5 +23,5 @@ public interface ITaskHandler
         }
     }
     
-    public static final TaskSet emptySet = new TaskSet(new Integer[0], new EntityAIBase[0]);
+    public static final ActionSet emptySet = new ActionSet(new Integer[0], new EntityAIBase[0]);
 }

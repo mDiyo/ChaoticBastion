@@ -1,11 +1,11 @@
-package bastion.entity.ai;
+package bastion.ai.action;
 
 import bastion.entity.friendly.GolemBase;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.util.MathHelper;
 
-public class AIFollowLeader extends AIBase
+public class AIFollowLeader extends ActionBase
 {
     private EntityLivingBase leader;
     private float speed;
@@ -27,6 +27,9 @@ public class AIFollowLeader extends AIBase
 
     public boolean shouldExecute ()
     {
+        if (golem.hasTask())
+            return false;
+        
         EntityLivingBase owner = this.golem.getLeader();
 
         if (owner == null)

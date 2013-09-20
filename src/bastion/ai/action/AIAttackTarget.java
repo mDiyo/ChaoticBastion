@@ -1,11 +1,11 @@
-package bastion.entity.ai;
+package bastion.ai.action;
 
 import bastion.entity.friendly.GolemBase;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.pathfinding.PathNavigate;
 
-public class AIAttackTarget extends AIBase
+public class AIAttackTarget extends ActionBase
 {
     private PathNavigate pathfinder;
     private EntityLivingBase theTarget;

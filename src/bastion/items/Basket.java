@@ -20,6 +20,7 @@ public class Basket extends Item implements IItemSucker
     {
         super(par1);
         this.setCreativeTab(CContent.tab);
+        this.maxStackSize = 1;
     }
 
     public ItemStack onItemRightClick (ItemStack stack, World world, EntityPlayer player) //Eject inventory

@@ -1,4 +1,4 @@
-package bastion.entity.ai;
+package bastion.ai.action;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.entity.passive.EntitySheep;
 
-public class AIFindTarget extends AIBase
+public class AIFindTarget extends ActionBase
 {
     private int counter;
     public static double searchRange = 16;

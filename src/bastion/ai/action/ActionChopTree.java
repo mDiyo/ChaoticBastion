@@ -1,11 +1,11 @@
-package bastion.entity.ai;
+package bastion.ai.action;
 
 import bastion.entity.friendly.GolemBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;
 import net.minecraft.util.MathHelper;
 
-public class AIChopTree extends AIBase
+public class ActionChopTree extends ActionBase
 {
     private int counter;
     private int logID;
@@ -15,7 +15,7 @@ public class AIChopTree extends AIBase
     public static int cutRange = 4;
     public static double cutSpeed = 2.5;
 
-    public AIChopTree(GolemBase golem)
+    public ActionChopTree(GolemBase golem)
     {
         super(golem);
         this.setMutexBits(3);

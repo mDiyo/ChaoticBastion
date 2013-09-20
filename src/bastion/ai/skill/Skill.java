@@ -1,4 +1,4 @@
-package bastion.skill;
+package bastion.ai.skill;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;

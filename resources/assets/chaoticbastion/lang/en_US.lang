@@ -2,7 +2,7 @@
 itemGroup.ChaoticBastion=Chaotic Bastion
 itemGroup.ChaoticBastionDecor=Chaotic Bastion Decor
 
-entity.ChaoticBastion.GardeSlime.name=Gardeslime
+entity.ChaoticBastion.Gardeslime.name=Gardeslime
 
 tile.bastion.woodwall.name=Wooden Barrier
 tile.bastion.aggregator.name=Light Aggregator

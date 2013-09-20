@@ -1,8 +1,8 @@
 package bastion.entity.friendly;
 
-import bastion.entity.ai.AIAttackTarget;
-import bastion.entity.ai.AIFindTarget;
-import bastion.entity.ai.AIFollowLeader;
+import bastion.ai.action.AIAttackTarget;
+import bastion.ai.action.AIFindTarget;
+import bastion.ai.action.AIFollowLeader;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;

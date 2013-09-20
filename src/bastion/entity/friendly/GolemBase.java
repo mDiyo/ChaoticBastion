@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import bastion.util.CoordITuple;
+
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
@@ -129,6 +131,16 @@ public class GolemBase extends EntityCreature implements IInventory
     public boolean patrolling ()
     {
         return true;
+    }
+    
+    public boolean hasTask ()
+    {
+        return false;
+    }
+    
+    public void setHasTask(boolean flag)
+    {
+        
     }
 
     public void attackEntityAsGolem (Entity target)
@@ -295,7 +307,7 @@ public class GolemBase extends EntityCreature implements IInventory
         super.onLivingUpdate();
         if (!this.worldObj.isRemote && !this.dead && this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"))
         {
-            List list = this.worldObj.getEntitiesWithinAABB(EntityItem.class, this.boundingBox.expand(1.5D, 0.0D, 1.5D));
+            List list = this.worldObj.getEntitiesWithinAABB(EntityItem.class, this.boundingBox.expand(1.5D, 1.0D, 1.5D));
             Iterator iterator = list.iterator();
 
             while (iterator.hasNext())
@@ -651,5 +663,13 @@ public class GolemBase extends EntityCreature implements IInventory
                 inventory[slotID] = ItemStack.loadItemStackFromNBT(tagList);
             }
         }
+    }
+
+    public double getDistanceSqToEntity (CoordITuple target)
+    {
+        double d0 = this.posX - target.x;
+        double d1 = this.posY - target.y;
+        double d2 = this.posZ - target.z;
+        return d0 * d0 + d1 * d1 + d2 * d2;
     }
 }

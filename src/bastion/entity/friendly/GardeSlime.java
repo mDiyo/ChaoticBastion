@@ -1,5 +1,6 @@
 package bastion.entity.friendly;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import net.minecraft.entity.ai.EntityAIBase;
@@ -8,36 +9,43 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import bastion.ChaoticBastion;
-import bastion.entity.ai.AIFollowLeader;
-import bastion.entity.ai.AISwim;
-import bastion.entity.ai.GardeslimeTaskHandler;
-import bastion.entity.ai.ITaskHandler;
-import bastion.entity.ai.ITaskHandler.TaskSet;
+import bastion.ai.action.AISwim;
+import bastion.ai.action.GardeslimeTaskHandler;
+import bastion.ai.action.ITaskHandler;
+import bastion.ai.action.ITaskHandler.ActionSet;
+import bastion.ai.task.TaskBase;
 import bastion.util.CNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GardeSlime extends GolemBase
+public class Gardeslime extends GolemBase
 {
-    protected EntityAIBase[] currentTasks = new EntityAIBase[0];
-    public GardeSlime(World world)
+    protected EntityAIBase[] currentActions = new EntityAIBase[0];
+    public boolean onTask;
+    protected TaskBase currentTask;
+    protected TaskBase toolTask;
+    protected ArrayList<TaskBase> taskPool = new ArrayList<TaskBase>();
+
+    public Gardeslime(World world)
     {
         super(world);
         this.setSize(0.375F, 0.875F);
+        this.tasks.addTask(1, new AISwim(this)); //Not actually tasks, despite the name
+        //this.tasks.addTask(10, new AIFollowLeader(this));
         initDefaultTasks();
     }
 
-    private void initDefaultTasks()
+    private void initDefaultTasks ()
     {
-        this.tasks.addTask(1, new AISwim(this));
-        this.tasks.addTask(10, new AIFollowLeader(this));
-        
+
         ITaskHandler handler = new GardeslimeTaskHandler();
-        registerTaskHandler(Item.axeWood, handler);
+        /*registerTaskHandler(Item.axeWood, handler);
         registerTaskHandler(Item.axeStone, handler);
         registerTaskHandler(Item.axeIron, handler);
         registerTaskHandler(Item.axeDiamond, handler);
         registerTaskHandler(Item.axeDiamond, handler);
+
+        registerTaskHandler(CContent.basket, handler);*/
     }
 
     @Override
@@ -50,6 +58,11 @@ public class GardeSlime extends GolemBase
     public float getShadowSize () //Opacity, not size
     {
         return 1.0F;
+    }
+
+    public float getSpeed ()
+    {
+        return 0.375f;
     }
 
     public boolean interact (EntityPlayer player)
@@ -89,10 +102,10 @@ public class GardeSlime extends GolemBase
             return true;
         }
     }
-    
+
     static HashMap<Item, ITaskHandler> taskHandlers = new HashMap<Item, ITaskHandler>();
-    
-    public static void registerTaskHandler(Item item, ITaskHandler handler)
+
+    public static void registerTaskHandler (Item item, ITaskHandler handler)
     {
         if (item != null)
         {
@@ -104,29 +117,59 @@ public class GardeSlime extends GolemBase
         }
     }
 
-    void updateItemAI(ItemStack stack)
+    void updateItemAI (ItemStack stack)
     {
-        for (EntityAIBase task : currentTasks)
+        for (EntityAIBase task : currentActions)
         {
-            this.tasks.removeTask(task);
+            tasks.removeTask(task);
+            toolTask = null;
         }
-        
+
         if (stack != null)
         {
-            ITaskHandler handler = taskHandlers.get(stack.itemID);
+            ITaskHandler handler = taskHandlers.get(stack.getItem());
             if (handler != null)
             {
-                TaskSet newTasks = handler.getTasks(this, stack);
+                ActionSet newTasks = handler.getActions(this, stack);
                 for (int i = 0; i < newTasks.tasks.length; i++)
                 {
-                    this.tasks.addTask(newTasks.priority[i], newTasks.tasks[i]);
+                    tasks.addTask(newTasks.priority[i], newTasks.tasks[i]);
                 }
-                currentTasks = newTasks.tasks;
+                currentActions = newTasks.tasks;
+                toolTask = handler.getToolTask(this, stack);
+                //temporary
+                currentTask = toolTask;
+                currentTask.startTask();
             }
         }
         else
         {
-            currentTasks = new EntityAIBase[0];
+            currentActions = new EntityAIBase[0];
         }
+    }
+
+    public boolean hasTask ()
+    {
+        return onTask;
+    }
+
+    protected void updateEntityActionState ()
+    {
+        super.updateEntityActionState();
+        if (currentTask != null)
+        {
+            if (!currentTask.updateTask())
+            {
+                getNewTask();
+            }
+        }
+    }
+
+    protected void getNewTask ()
+    {
+        currentTask.endTask();
+        //Decide new task
+        if (currentTask != null)
+            currentTask.startTask();
     }
 }

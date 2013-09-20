@@ -96,7 +96,7 @@ public class CContent
     public static void createEntities()
     {
         EntityRegistry.registerModEntity(WoodMinecartEntity.class, "WoodMinecart.Empty", 0, ChaoticBastion.instance, 32, 3, true);
-        EntityRegistry.registerModEntity(GardeSlime.class, "GardeSlime", 1, ChaoticBastion.instance, 64, 3, true);
+        EntityRegistry.registerModEntity(Gardeslime.class, "GardeSlime", 1, ChaoticBastion.instance, 64, 3, true);
 
     }
 

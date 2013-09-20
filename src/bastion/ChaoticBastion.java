@@ -2,7 +2,7 @@ package bastion;
 
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
-import bastion.skill.PlayerSkillTracker;
+import bastion.ai.skill.PlayerSkillTracker;
 import bastion.util.CEventHandler;
 import bastion.util.CNetworkHandler;
 import bastion.util.CPacketHandler;

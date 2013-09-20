@@ -1,4 +1,4 @@
-package bastion.entity.ai;
+package bastion.ai.action;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.util.MathHelper;
 import bastion.entity.friendly.GolemBase;
 
-public class AIFireBow extends AIBase
+public class AIFireBow extends ActionBase
 {
     static Random rand = new Random();
     private EntityLivingBase attackTarget;

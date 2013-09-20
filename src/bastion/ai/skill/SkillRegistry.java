@@ -1,4 +1,4 @@
-package bastion.skill;
+package bastion.ai.skill;
 
 import java.util.HashMap;
 
