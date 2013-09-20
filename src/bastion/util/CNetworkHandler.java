@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.world.World;
-import bastion.entity.friendly.Gardeslime;
+import bastion.entity.friendly.GardeSlime;
 import bastion.inventory.MiniGardyContainer;
 import bastion.inventory.MiniGardyGui;
 import cpw.mods.fml.common.network.IGuiHandler;
@@ -36,7 +36,7 @@ public class CNetworkHandler implements IGuiHandler
                 Entity entity = (Entity) o;
                 if (entity.entityId == x)
                 {
-                    return new MiniGardyContainer(player.inventory, (Gardeslime) entity);
+                    return new MiniGardyContainer(player.inventory, (GardeSlime) entity);
                 }
             }
             return null;
@@ -54,7 +54,7 @@ public class CNetworkHandler implements IGuiHandler
                 Entity entity = (Entity) o;
                 if (entity.entityId == x)
                 {
-                    return new MiniGardyGui(player.inventory, (Gardeslime) entity);
+                    return new MiniGardyGui(player.inventory, (GardeSlime) entity);
                 }
             }
         }

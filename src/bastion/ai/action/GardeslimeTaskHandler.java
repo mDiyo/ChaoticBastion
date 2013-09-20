@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import bastion.ai.task.TaskBase;
-import bastion.entity.friendly.Gardeslime;
+import bastion.entity.friendly.GardeSlime;
 import bastion.entity.friendly.GolemBase;
 import bastion.util.IItemSucker;
 
@@ -15,7 +15,7 @@ public class GardeslimeTaskHandler implements ITaskHandler
     @Override
     public ActionSet getActions(Entity entity, ItemStack stack)
     {
-        if (entity instanceof Gardeslime)
+        if (entity instanceof GardeSlime)
         {
             Item item = stack.getItem();
             if (item instanceof ItemAxe)
@@ -33,7 +33,7 @@ public class GardeslimeTaskHandler implements ITaskHandler
     @Override
     public TaskBase getToolTask (Entity entity, ItemStack stack)
     {
-        if (entity instanceof Gardeslime)
+        if (entity instanceof GardeSlime)
         {
             Item item = stack.getItem();
             if (item instanceof ItemAxe)

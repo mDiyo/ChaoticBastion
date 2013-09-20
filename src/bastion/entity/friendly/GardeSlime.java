@@ -18,7 +18,7 @@ import bastion.util.CNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Gardeslime extends GolemBase
+public class GardeSlime extends GolemBase
 {
     protected EntityAIBase[] currentActions = new EntityAIBase[0];
     public boolean onTask;
@@ -26,7 +26,7 @@ public class Gardeslime extends GolemBase
     protected TaskBase toolTask;
     protected ArrayList<TaskBase> taskPool = new ArrayList<TaskBase>();
 
-    public Gardeslime(World world)
+    public GardeSlime(World world)
     {
         super(world);
         this.setSize(0.375F, 0.875F);

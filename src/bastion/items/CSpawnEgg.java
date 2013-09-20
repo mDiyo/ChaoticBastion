@@ -13,7 +13,7 @@ import net.minecraft.util.Facing;
 import net.minecraft.util.Icon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
-import bastion.entity.friendly.Gardeslime;
+import bastion.entity.friendly.GardeSlime;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -106,7 +106,7 @@ public class CSpawnEgg extends Item
         switch (damage)
         {
         case 0:
-            entity = new Gardeslime(world);
+            entity = new GardeSlime(world);
             spawnEntity(posX, posY, posZ, entity, world);
             break;
         }

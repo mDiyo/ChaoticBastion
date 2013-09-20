@@ -9,16 +9,16 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import bastion.entity.friendly.Gardeslime;
+import bastion.entity.friendly.GardeSlime;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class MiniGardyGui extends GuiContainer
 {
-    public Gardeslime gardy;
+    public GardeSlime gardy;
 
-    public MiniGardyGui(InventoryPlayer inventoryplayer, Gardeslime gardy)
+    public MiniGardyGui(InventoryPlayer inventoryplayer, GardeSlime gardy)
     {
         super(new MiniGardyContainer(inventoryplayer, gardy));
         this.gardy = gardy;
