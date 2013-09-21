@@ -2,6 +2,8 @@
 itemGroup.ChaoticBastion=Chaotic Bastion
 itemGroup.ChaoticBastionDecor=Chaotic Bastion Dekor
 
+entity.ChaoticBastion.Gardeslime.name=Guardeschleim
+
 tile.bastion.woodwall.name=Hölzerne Barriere
 tile.bastion.aggregator.name=Lichtaggregator
 tile.bastion.crystal.block.name=Lichtkristall
@@ -167,3 +169,6 @@ tile.stone.chiseled.brown.name=Gemeißelter Irdener Steinziegel
 tile.stone.chiseled.green.name=Gemeißelter Smaragdener Steinziegel
 tile.stone.chiseled.red.name=Gemeißelter Abendrotsteinziegel
 tile.stone.chiseled.black.name=Gemeißelter Rußiger Steinziegel
+
+item.bastion.spawnEgg.name=Erschaffe
+item.bastion.basket.name=Korb
