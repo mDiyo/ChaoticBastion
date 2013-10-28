@@ -5,22 +5,29 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import bastion.util.CoordITuple;
-
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnchantmentThorns;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IEntityMultiPart;
+import net.minecraft.entity.boss.EntityDragonPart;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.potion.Potion;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ReportedException;
 import net.minecraft.world.World;
+import bastion.util.CoordITuple;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -145,133 +152,9 @@ public class GolemBase extends EntityCreature implements IInventory
 
     public void attackEntityAsGolem (Entity target)
     {
-        /*ItemStack stack = getHeldItem();
+        ItemStack stack = getHeldItem();
         if (stack == null)
             target.attackEntityFrom(DamageSource.causeMobDamage(this), baseAttack);
-
-        else if (stack.getItem() instanceof ToolCore)
-        {
-            if (stack.hasTagCompound())
-            {
-                AbilityHelper.onLeftClickEntity(stack, this, target, (ToolCore) stack.getItem(), baseAttack);
-            }
-            else
-                target.attackEntityFrom(DamageSource.causeMobDamage(this), baseAttack);
-        }
-        else
-        {
-            if (target.canAttackWithItem())
-            {
-                if (!target.func_85031_j(this))
-                {
-                    int i = stack.getDamageVsEntity(target) + baseAttack;
-
-                    if (this.isPotionActive(Potion.damageBoost))
-                    {
-                        i += 3 << this.getActivePotionEffect(Potion.damageBoost).getAmplifier();
-                    }
-
-                    if (this.isPotionActive(Potion.weakness))
-                    {
-                        i -= 2 << this.getActivePotionEffect(Potion.weakness).getAmplifier();
-                    }
-
-                    int j = 0;
-                    int k = 0;
-
-                    if (target instanceof EntityLivingBase)
-                    {
-                        k = EnchantmentHelper.getEnchantmentModifierLiving(this, (EntityLivingBase) target);
-                        j += EnchantmentHelper.getKnockbackModifier(this, (EntityLivingBase) target);
-                    }
-
-                    if (this.isSprinting())
-                    {
-                        ++j;
-                    }
-
-                    if (i > 0 || k > 0)
-                    {
-                        boolean flag = this.fallDistance > 0.0F && !this.onGround && !this.isOnLadder() && !this.isInWater() && !this.isPotionActive(Potion.blindness) && this.ridingEntity == null
-                                && target instanceof EntityLivingBase;
-
-                        if (flag && i > 0)
-                        {
-                            i += this.rand.nextInt(i / 2 + 2);
-                        }
-
-                        i += k;
-                        boolean flag1 = false;
-                        int l = EnchantmentHelper.getFireAspectModifier(this);
-
-                        if (target instanceof EntityLivingBase && l > 0 && !target.isBurning())
-                        {
-                            flag1 = true;
-                            target.setFire(1);
-                        }
-
-                        boolean flag2 = target.attackEntityFrom(DamageSource.causeMobDamage(this), i);
-
-                        if (flag2)
-                        {
-                            if (j > 0)
-                            {
-                                target.addVelocity((double) (-MathHelper.sin(this.rotationYaw * (float) Math.PI / 180.0F) * (float) j * 0.5F), 0.1D,
-                                        (double) (MathHelper.cos(this.rotationYaw * (float) Math.PI / 180.0F) * (float) j * 0.5F));
-                                this.motionX *= 0.6D;
-                                this.motionZ *= 0.6D;
-                                this.setSprinting(false);
-                            }
-                            this.setLastAttackingEntity(target);
-
-                            if (target instanceof EntityLivingBase)
-                            {
-                                EnchantmentThorns.func_92096_a(this, (EntityLivingBase) target, this.rand);
-                            }
-                        }
-
-                        //ItemStack stack = this.getCurrentEquippedItem();
-                        Object object = target;
-
-                        if (target instanceof EntityDragonPart)
-                        {
-                            IEntityMultiPart ientitymultipart = ((EntityDragonPart) target).entityDragonObj;
-
-                            if (ientitymultipart != null && ientitymultipart instanceof EntityLivingBase)
-                            {
-                                object = (EntityLivingBase) ientitymultipart;
-                            }
-                        }
-
-                        if (stack != null && object instanceof EntityLivingBase)
-                        {
-                            //stack.hitEntity((EntityLiving)object, this);
-                            Item.itemsList[stack.itemID].hitEntity(stack, (EntityLivingBase) object, this);
-
-                            if (stack.stackSize <= 0)
-                            {
-                                this.destroyCurrentEquippedItem();
-                            }
-                        }
-
-                        if (target instanceof EntityLivingBase)
-                        {
-
-                            if (l > 0 && flag2)
-                            {
-                                target.setFire(l * 4);
-                            }
-                            else if (flag1)
-                            {
-                                target.extinguish();
-                            }
-                        }
-
-                        //this.addExhaustion(0.3F);
-                    }
-                }
-            }
-        }*/
     }
 
     public void teleport (double x, double y, double z)

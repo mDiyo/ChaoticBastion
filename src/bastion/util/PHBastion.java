@@ -64,6 +64,8 @@ public class PHBastion
         coloredStoneFancyBrick = config.getBlock("Colored Fancy Stone Brick", 2910).getInt(2910);
         coloredStoneSquareBrick = config.getBlock("Colored Chiseled Stone Brick", 2911).getInt(2911);
         
+        woodTank = config.getBlock("Wooden Tank", 2912).getInt(2912);
+        
         //Items
         woodCart = config.getItem("Wooden Minecart", 23701).getInt(23701);
         spawnEgg = config.getItem("Spawn Egg", 23702).getInt(23702);
@@ -85,6 +87,7 @@ public class PHBastion
     
     //Base building
     public static int woodRail;
+    public static int woodTank;
     
     //Crystalline
     public static int aggregator;

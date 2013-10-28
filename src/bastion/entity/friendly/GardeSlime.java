@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import bastion.CContent;
 import bastion.ChaoticBastion;
 import bastion.ai.action.AISwim;
 import bastion.ai.action.GardeslimeTaskHandler;
@@ -33,19 +34,26 @@ public class GardeSlime extends GolemBase
         this.tasks.addTask(1, new AISwim(this)); //Not actually tasks, despite the name
         //this.tasks.addTask(10, new AIFollowLeader(this));
         initDefaultTasks();
+        
+        this.setHomeArea((int)posX, (int)posY, (int)posZ, 0);
     }
 
     private void initDefaultTasks ()
     {
-
         ITaskHandler handler = new GardeslimeTaskHandler();
-        /*registerTaskHandler(Item.axeWood, handler);
+        registerTaskHandler(Item.axeWood, handler);
+        registerTaskHandler(Item.axeStone, handler);
+        registerTaskHandler(Item.axeIron, handler);
+        registerTaskHandler(Item.axeDiamond, handler);
+        registerTaskHandler(Item.axeDiamond, handler);
+        
+        registerTaskHandler(Item.pickaxeWood, handler);
         registerTaskHandler(Item.axeStone, handler);
         registerTaskHandler(Item.axeIron, handler);
         registerTaskHandler(Item.axeDiamond, handler);
         registerTaskHandler(Item.axeDiamond, handler);
 
-        registerTaskHandler(CContent.basket, handler);*/
+        registerTaskHandler(CContent.basket, handler);
     }
 
     @Override

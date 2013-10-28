@@ -3,6 +3,7 @@ package bastion;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.EntityRegistry;
@@ -22,67 +23,71 @@ public class CContent
     {
         //Defensive
         woodWall = new WallBlock(PHBastion.woodWall, Material.wood, 0.4f).setStepSound(Block.soundWoodFootstep).setCreativeTab(tab).setUnlocalizedName("bastion.woodwall");
-        GameRegistry.registerBlock(woodWall, WoodBarrierItem.class, "bastion.woodwall");
+        GameRegistry.registerBlock(woodWall, WoodBarrierItem.class, "bastion.woodwall", "ChaoticBastion");
         tab.init(new ItemStack(woodWall));
 
         banner = new BannerBlock(PHBastion.banner, Material.wood).setStepSound(Block.soundWoodFootstep).setCreativeTab(tab).setUnlocalizedName("bastion.banner");
-        GameRegistry.registerBlock(banner, BannerItem.class, "bastion.banner");
+        GameRegistry.registerBlock(banner, BannerItem.class, "bastion.banner", "ChaoticBastion");
         GameRegistry.registerTileEntity(BannerLogic.class, "bastion.banner.light");
 
         //Base building
         woodRail = new WoodRail(PHBastion.woodRail).setStepSound(Block.soundWoodFootstep).setCreativeTab(tab).setUnlocalizedName("bastion.woodrail");
-        GameRegistry.registerBlock(woodRail, "bastion.woodrail");
+        GameRegistry.registerBlock(woodRail, ItemBlock.class, "bastion.woodrail", "ChaoticBastion");
+        
+        woodTank = new WoodTank(PHBastion.woodTank, Material.wood).setStepSound(Block.soundWoodFootstep).setCreativeTab(tab).setUnlocalizedName("bastion.woodtank");
+        GameRegistry.registerBlock(woodTank, ItemBlock.class, "bastion.woodtank", "ChaoticBastion");
+        GameRegistry.registerTileEntity(WoodTankLogic.class, "bastion.woodtank.logic");
 
         //Crystalline
         aggregator = new Aggregator(PHBastion.aggregator).setUnlocalizedName("bastion.aggregator");
         aggregator.stepSound = Block.soundMetalFootstep;
-        GameRegistry.registerBlock(aggregator, "bastion.aggregator");
+        GameRegistry.registerBlock(aggregator, ItemBlock.class, "bastion.aggregator", "ChaoticBastion");
         GameRegistry.registerTileEntity(LightAggregator.class, "bastion.aggregator.light");
 
         crystalBlock = new CrystalBlock(PHBastion.crystalBlock).setUnlocalizedName("bastion.crystal.block");
         crystalBlock.stepSound = Block.soundGlassFootstep;
-        GameRegistry.registerBlock(crystalBlock, LightCrystalItem.class, "bastion.crystal.block");
+        GameRegistry.registerBlock(crystalBlock, LightCrystalItem.class, "bastion.crystal.block", "ChaoticBastion");
         GameRegistry.registerTileEntity(CrystalLogic.class, "bastion.crystal.logic");
 
         antilight = new AntiLight(PHBastion.antilight).setUnlocalizedName("bastion.antilight");
-        GameRegistry.registerBlock(antilight, "bastion.antilight");
+        GameRegistry.registerBlock(antilight, ItemBlock.class, "bastion.antilight", "ChaoticBastion");
 
         //Decorative 
         coloredStone = new ColorBlock(PHBastion.coloredStone, Material.rock, 1.5f, "stone_raw", "stone.raw").setUnlocalizedName("bastion.stone.raw");
-        GameRegistry.registerBlock(coloredStone, ColorItemBlock.class, "bastion.stone.raw");
+        GameRegistry.registerBlock(coloredStone, ColorItemBlock.class, "bastion.stone.raw", "ChaoticBastion");
         coloredCobble = new ColorBlock(PHBastion.coloredCobble, Material.rock, 2.0f, "stone_cobble", "stone.cobble").setUnlocalizedName("bastion.stone.cobble");
-        GameRegistry.registerBlock(coloredCobble, ColorItemBlock.class, "bastion.stone.cobble");
+        GameRegistry.registerBlock(coloredCobble, ColorItemBlock.class, "bastion.stone.cobble", "ChaoticBastion");
         coloredMossCobble = new ColorBlock(PHBastion.coloredMossCobble, Material.rock, 2.0f, "stone_mosscobble", "stone.mosscobble").setUnlocalizedName("bastion.stone.mosscobble");
-        GameRegistry.registerBlock(coloredMossCobble, ColorItemBlock.class, "bastion.stone.mosscobble");
+        GameRegistry.registerBlock(coloredMossCobble, ColorItemBlock.class, "bastion.stone.mosscobble", "ChaoticBastion");
         coloredStoneBrick = new ColorBlock(PHBastion.coloredStoneBrick, Material.rock, 1.5f, "stone_brick", "stone.brick").setUnlocalizedName("bastion.stone.brick");
-        GameRegistry.registerBlock(coloredStoneBrick, ColorItemBlock.class, "bastion.stone.brick");
+        GameRegistry.registerBlock(coloredStoneBrick, ColorItemBlock.class, "bastion.stone.brick", "ChaoticBastion");
         coloredMossStoneBrick = new ColorBlock(PHBastion.coloredMossStoneBrick, Material.rock, 1.5f, "stone_mossbrick", "stone.mossbrick").setUnlocalizedName("bastion.stone.mossbrick");
-        GameRegistry.registerBlock(coloredMossStoneBrick, ColorItemBlock.class, "bastion.stone.mossbrick");
+        GameRegistry.registerBlock(coloredMossStoneBrick, ColorItemBlock.class, "bastion.stone.mossbrick", "ChaoticBastion");
         coloredCrackedStoneBrick = new ColorBlock(PHBastion.coloredCrackedBrick, Material.rock, 1.5f, "stone_crackedbrick", "stone.crackedbrick").setUnlocalizedName("bastion.stone.crackedbrick");
-        GameRegistry.registerBlock(coloredCrackedStoneBrick, ColorItemBlock.class, "bastion.stone.crackedbrick");
+        GameRegistry.registerBlock(coloredCrackedStoneBrick, ColorItemBlock.class, "bastion.stone.crackedbrick", "ChaoticBastion");
         coloredStoneRoad = new ColorBlock(PHBastion.coloredStoneRoad, Material.rock, 1.5f, "stone_road", "stone.road").setUnlocalizedName("bastion.stone.road");
-        GameRegistry.registerBlock(coloredStoneRoad, ColorItemBlock.class, "bastion.stone.road");
+        GameRegistry.registerBlock(coloredStoneRoad, ColorItemBlock.class, "bastion.stone.road", "ChaoticBastion");
         coloredStoneFancyBrick = new ColorBlock(PHBastion.coloredStoneFancyBrick, Material.rock, 1.5f, "stone_fancy", "stone.fancy").setUnlocalizedName("bastion.stone.fancy");
-        GameRegistry.registerBlock(coloredStoneFancyBrick, ColorItemBlock.class, "bastion.stone.fancy");
+        GameRegistry.registerBlock(coloredStoneFancyBrick, ColorItemBlock.class, "bastion.stone.fancy", "ChaoticBastion");
         coloredStoneSquareBrick = new ColorBlock(PHBastion.coloredStoneSquareBrick, Material.rock, 1.5f, "stone_square", "stone.chiseled").setUnlocalizedName("bastion.stone.chiseled");
-        GameRegistry.registerBlock(coloredStoneSquareBrick, ColorItemBlock.class, "bastion.stone.chiseled");
+        GameRegistry.registerBlock(coloredStoneSquareBrick, ColorItemBlock.class, "bastion.stone.chiseled", "ChaoticBastion");
         decorTab.init(new ItemStack(coloredStoneSquareBrick, 1, 3));
 
         //Worldgen
         baseHerb = new HerbStandard(PHBastion.baseHerb, "base").setUnlocalizedName("bastion.herb.base");
-        GameRegistry.registerBlock(baseHerb, HerbItem.class, "bastion.herb.base");
+        GameRegistry.registerBlock(baseHerb, HerbItem.class, "bastion.herb.base", "ChaoticBastion");
         bloodyHerb = new HerbStandard(PHBastion.bloodyHerb, "bloody").setUnlocalizedName("bastion.herb.bloody");
-        GameRegistry.registerBlock(bloodyHerb, HerbItem.class, "bastion.herb.bloody");
+        GameRegistry.registerBlock(bloodyHerb, HerbItem.class, "bastion.herb.bloody", "ChaoticBastion");
         manaHerb = new HerbStandard(PHBastion.manaHerb, "mana").setUnlocalizedName("bastion.herb.mana");
-        GameRegistry.registerBlock(manaHerb, HerbItem.class, "bastion.herb.mana");
+        GameRegistry.registerBlock(manaHerb, HerbItem.class, "bastion.herb.mana", "ChaoticBastion");
         whiteHerb = new HerbStandard(PHBastion.whiteHerb, "white").setUnlocalizedName("bastion.herb.white");
-        GameRegistry.registerBlock(whiteHerb, HerbItem.class, "bastion.herb.white");
+        GameRegistry.registerBlock(whiteHerb, HerbItem.class, "bastion.herb.white", "ChaoticBastion");
         mandrakeHerb = new HerbStandard(PHBastion.mandrakeHerb, "mandrake").setUnlocalizedName("bastion.herb.mandrake");
-        GameRegistry.registerBlock(mandrakeHerb, HerbItem.class, "bastion.herb.mandrake");
+        GameRegistry.registerBlock(mandrakeHerb, HerbItem.class, "bastion.herb.mandrake", "ChaoticBastion");
         springHerb = new HerbStandard(PHBastion.springHerb, "spring").setUnlocalizedName("bastion.herb.spring");
-        GameRegistry.registerBlock(springHerb, HerbItem.class, "bastion.herb.spring");
+        GameRegistry.registerBlock(springHerb, HerbItem.class, "bastion.herb.spring", "ChaoticBastion");
         poisonHerb = new HerbStandard(PHBastion.poisonHerb, "poison").setUnlocalizedName("bastion.herb.poison");
-        GameRegistry.registerBlock(poisonHerb, HerbItem.class, "bastion.herb.poison");
+        GameRegistry.registerBlock(poisonHerb, HerbItem.class, "bastion.herb.poison", "ChaoticBastion");
 
     }
 
@@ -125,6 +130,7 @@ public class CContent
 
     //Base building
     public static Block woodRail;
+    public static Block woodTank;
 
     //Crystalline
     public static Block crystalBlock;

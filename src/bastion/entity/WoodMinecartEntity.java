@@ -13,6 +13,7 @@ public class WoodMinecartEntity extends EntityMinecart
     public WoodMinecartEntity(World world)
     {
         super(world);
+        this.setSize(0.48F, 0.7F);
     }
     
     public WoodMinecartEntity(World world, double x, double y, double z)
