@@ -48,23 +48,23 @@ public class CContent
         GameRegistry.registerBlock(antilight, "bastion.antilight");
 
         //Decorative 
-        coloredStone = new ColorBlock(PHBastion.coloredStone, Material.rock, 1.5f, "stone_raw", "stone.raw").setUnlocalizedName("bastion.stone.raw");
+        coloredStone = new ColorBlock(PHBastion.coloredStone, Material.rock, 1.5f, "stone_raw", "stone.raw", PHBastion.coloredCobble).setUnlocalizedName("bastion.stone.raw");
         GameRegistry.registerBlock(coloredStone, ColorItemBlock.class, "bastion.stone.raw");
-        coloredCobble = new ColorBlock(PHBastion.coloredCobble, Material.rock, 2.0f, "stone_cobble", "stone.cobble").setUnlocalizedName("bastion.stone.cobble");
+        coloredCobble = new ColorBlock(PHBastion.coloredCobble, Material.rock, 2.0f, "stone_cobble", "stone.cobble", 0).setUnlocalizedName("bastion.stone.cobble");
         GameRegistry.registerBlock(coloredCobble, ColorItemBlock.class, "bastion.stone.cobble");
-        coloredMossCobble = new ColorBlock(PHBastion.coloredMossCobble, Material.rock, 2.0f, "stone_mosscobble", "stone.mosscobble").setUnlocalizedName("bastion.stone.mosscobble");
+        coloredMossCobble = new ColorBlock(PHBastion.coloredMossCobble, Material.rock, 2.0f, "stone_mosscobble", "stone.mosscobble", 0).setUnlocalizedName("bastion.stone.mosscobble");
         GameRegistry.registerBlock(coloredMossCobble, ColorItemBlock.class, "bastion.stone.mosscobble");
-        coloredStoneBrick = new ColorBlock(PHBastion.coloredStoneBrick, Material.rock, 1.5f, "stone_brick", "stone.brick").setUnlocalizedName("bastion.stone.brick");
+        coloredStoneBrick = new ColorBlock(PHBastion.coloredStoneBrick, Material.rock, 1.5f, "stone_brick", "stone.brick", 0).setUnlocalizedName("bastion.stone.brick");
         GameRegistry.registerBlock(coloredStoneBrick, ColorItemBlock.class, "bastion.stone.brick");
-        coloredMossStoneBrick = new ColorBlock(PHBastion.coloredMossStoneBrick, Material.rock, 1.5f, "stone_mossbrick", "stone.mossbrick").setUnlocalizedName("bastion.stone.mossbrick");
+        coloredMossStoneBrick = new ColorBlock(PHBastion.coloredMossStoneBrick, Material.rock, 1.5f, "stone_mossbrick", "stone.mossbrick", 0).setUnlocalizedName("bastion.stone.mossbrick");
         GameRegistry.registerBlock(coloredMossStoneBrick, ColorItemBlock.class, "bastion.stone.mossbrick");
-        coloredCrackedStoneBrick = new ColorBlock(PHBastion.coloredCrackedBrick, Material.rock, 1.5f, "stone_crackedbrick", "stone.crackedbrick").setUnlocalizedName("bastion.stone.crackedbrick");
+        coloredCrackedStoneBrick = new ColorBlock(PHBastion.coloredCrackedBrick, Material.rock, 1.5f, "stone_crackedbrick", "stone.crackedbrick", 0).setUnlocalizedName("bastion.stone.crackedbrick");
         GameRegistry.registerBlock(coloredCrackedStoneBrick, ColorItemBlock.class, "bastion.stone.crackedbrick");
-        coloredStoneRoad = new ColorBlock(PHBastion.coloredStoneRoad, Material.rock, 1.5f, "stone_road", "stone.road").setUnlocalizedName("bastion.stone.road");
+        coloredStoneRoad = new ColorBlock(PHBastion.coloredStoneRoad, Material.rock, 1.5f, "stone_road", "stone.road", 0).setUnlocalizedName("bastion.stone.road");
         GameRegistry.registerBlock(coloredStoneRoad, ColorItemBlock.class, "bastion.stone.road");
-        coloredStoneFancyBrick = new ColorBlock(PHBastion.coloredStoneFancyBrick, Material.rock, 1.5f, "stone_fancy", "stone.fancy").setUnlocalizedName("bastion.stone.fancy");
+        coloredStoneFancyBrick = new ColorBlock(PHBastion.coloredStoneFancyBrick, Material.rock, 1.5f, "stone_fancy", "stone.fancy", 0).setUnlocalizedName("bastion.stone.fancy");
         GameRegistry.registerBlock(coloredStoneFancyBrick, ColorItemBlock.class, "bastion.stone.fancy");
-        coloredStoneSquareBrick = new ColorBlock(PHBastion.coloredStoneSquareBrick, Material.rock, 1.5f, "stone_square", "stone.chiseled").setUnlocalizedName("bastion.stone.chiseled");
+        coloredStoneSquareBrick = new ColorBlock(PHBastion.coloredStoneSquareBrick, Material.rock, 1.5f, "stone_square", "stone.chiseled", 0).setUnlocalizedName("bastion.stone.chiseled");
         GameRegistry.registerBlock(coloredStoneSquareBrick, ColorItemBlock.class, "bastion.stone.chiseled");
         decorTab.init(new ItemStack(coloredStoneSquareBrick, 1, 3));
 

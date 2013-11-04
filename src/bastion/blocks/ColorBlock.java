@@ -1,6 +1,7 @@
 package bastion.blocks;
 
 import java.util.List;
+import java.util.Random;
 
 import bastion.CContent;
 
@@ -20,14 +21,15 @@ public class ColorBlock extends Block
     public final String textureName;
     public final String localName;
     public Icon[] icons;
-
-    public ColorBlock(int ID, Material material, float hardness, String texture, String name)
+    private int drop = 0;
+    public ColorBlock(int ID, Material material, float hardness, String texture, String name, int dropID)
     {
         super(ID, material);
         this.setHardness(hardness);
         this.textureName = texture;
         this.localName = name;
         this.setCreativeTab(CContent.decorTab);
+        this.drop = dropID;
     }
     
     @Override
@@ -68,5 +70,14 @@ public class ColorBlock extends Block
         {
             list.add(new ItemStack(id, 1, iter));
         }
+    }
+    
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+    	if(drop > 0)
+    	{
+    		return drop;
+    	}
+        return this.blockID;
     }
 }
