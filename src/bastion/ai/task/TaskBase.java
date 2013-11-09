@@ -1,14 +1,14 @@
 package bastion.ai.task;
 
-import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EntityLiving;
 
 public abstract class TaskBase
 {
-    public final EntityLivingBase entity;
+    public final EntityLiving host;
     
-    public TaskBase(EntityLivingBase entity)
+    public TaskBase(EntityLiving entity)
     {
-        this.entity = entity;
+        this.host = entity;
     }
     
     /** Determines how high of a priority this task has. Higher is better

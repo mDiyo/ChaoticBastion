@@ -19,7 +19,7 @@ import bastion.util.CNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GardeSlime extends GolemBase
+public class Gardeslime extends GolemBase
 {
     protected EntityAIBase[] currentActions = new EntityAIBase[0];
     public boolean onTask;
@@ -27,7 +27,7 @@ public class GardeSlime extends GolemBase
     protected TaskBase toolTask;
     protected ArrayList<TaskBase> taskPool = new ArrayList<TaskBase>();
 
-    public GardeSlime(World world)
+    public Gardeslime(World world)
     {
         super(world);
         this.setSize(0.375F, 0.875F);
@@ -47,11 +47,17 @@ public class GardeSlime extends GolemBase
         registerTaskHandler(Item.axeDiamond, handler);
         registerTaskHandler(Item.axeDiamond, handler);
         
-        registerTaskHandler(Item.pickaxeWood, handler);
+        registerTaskHandler(Item.axeWood, handler);
         registerTaskHandler(Item.axeStone, handler);
         registerTaskHandler(Item.axeIron, handler);
         registerTaskHandler(Item.axeDiamond, handler);
         registerTaskHandler(Item.axeDiamond, handler);
+        
+        registerTaskHandler(Item.pickaxeWood, handler);
+        registerTaskHandler(Item.pickaxeStone, handler);
+        registerTaskHandler(Item.pickaxeIron, handler);
+        registerTaskHandler(Item.pickaxeDiamond, handler);
+        registerTaskHandler(Item.pickaxeDiamond, handler);
 
         registerTaskHandler(CContent.basket, handler);
     }
@@ -73,6 +79,7 @@ public class GardeSlime extends GolemBase
         return 0.375f;
     }
 
+    @Override
     public boolean interact (EntityPlayer player)
     {
         if (getLeader() == null)
@@ -94,7 +101,7 @@ public class GardeSlime extends GolemBase
                 {
                     this.setCurrentItemOrArmor(0, playerStack.copy());
                     updateItemAI(playerStack);
-                    player.destroyCurrentEquippedItem();
+                    //player.destroyCurrentEquippedItem();
                 }
             }
             else
@@ -161,9 +168,10 @@ public class GardeSlime extends GolemBase
         return onTask;
     }
 
-    protected void updateEntityActionState ()
+    @Override
+    protected void updateAITasks ()
     {
-        super.updateEntityActionState();
+        super.updateAITasks();
         if (currentTask != null)
         {
             if (!currentTask.updateTask())

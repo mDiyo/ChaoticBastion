@@ -1,6 +1,6 @@
 package bastion.inventory;
 
-import bastion.entity.friendly.GardeSlime;
+import bastion.entity.friendly.Gardeslime;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -9,9 +9,9 @@ import net.minecraft.item.ItemStack;
 
 public class MiniGardyContainer extends Container
 {
-    public GardeSlime gardy;
+    public Gardeslime gardy;
 
-    public MiniGardyContainer(InventoryPlayer inventoryplayer, GardeSlime entity)
+    public MiniGardyContainer(InventoryPlayer inventoryplayer, Gardeslime entity)
     {
         gardy = entity;
         for (int column = 0; column < 3; column++)
