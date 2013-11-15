@@ -3,6 +3,8 @@
 itemGroup.ChaoticBastion=混沌堡垒
 itemGroup.ChaoticBastionDecor=混沌堡垒|装饰
 
+entity.ChaoticBastion.Gardeslime.name=史莱姆守卫
+
 tile.bastion.woodwall.name=木头栅栏
 tile.bastion.aggregator.name=光能聚合器
 tile.bastion.crystal.block.name=光能水晶
@@ -168,3 +170,6 @@ tile.stone.chiseled.brown.name=雕琢罗马砖块
 tile.stone.chiseled.green.name=雕琢翡翠砖块
 tile.stone.chiseled.red.name=雕琢夕照砖块
 tile.stone.chiseled.black.name=雕琢煤黑砖块
+
+item.bastion.spawnEgg.name=生成
+item.bastion.basket.name=战利品篮子
