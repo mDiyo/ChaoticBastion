@@ -2,6 +2,4 @@ Chaotic Bastion
 
 Fear the raw undulating chaos!
 
-Code is public domain under Creative Commons 0: http://creativecommons.org/publicdomain/zero/1.0/ 	 
-Textures and binaries are licensed under Creative Commons 3: http://creativecommons.org/licenses/by/3.0/ 	 
-Any alternate licenses are noted where appropriate
+Code is available under MIT: http://opensource.org/licenses/MIT
